@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgb3bdeqole3v"]
+
+[ext_resource type="Script" path="res://scripts/loot_help.gd" id="1_fmx2j"]
+[ext_resource type="Texture2D" uid="uid://du0hnxy3uuhwx" path="res://assets/other/For Items2_Oramge.png" id="1_lon8t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t708e"]
+radius = 12.0416
+
+[node name="Loot" type="Area2D"]
+script = ExtResource("1_fmx2j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lon8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t708e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
