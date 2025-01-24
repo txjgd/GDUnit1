@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cher8w5cdowrr"]
 
-[ext_resource type="Texture2D" uid="uid://y87mgi8ks7to" path="res://assets/characters/CowHead.svg" id="1_k7ja0"]
+[ext_resource type="Texture2D" uid="uid://d4ffof5g504b7" path="res://assets/characters/CatHead.svg" id="1_ghqvf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uhtb3"]
 radius = 28.0179
@@ -9,7 +9,7 @@ radius = 28.0179
 
 [node name="Shape" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_k7ja0")
+texture = ExtResource("1_ghqvf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uhtb3")

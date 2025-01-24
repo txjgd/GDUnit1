@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhv6j24yoexcp"]
+
+[ext_resource type="Script" path="res://scripts/projectile_base.gd" id="1_ijxl8"]
+[ext_resource type="Texture2D" uid="uid://cblnuyhi6jxya" path="res://assets/other/tomato.svg" id="2_x0432"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t708e"]
+radius = 11.0454
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_ijxl8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0325, 0.0359821)
+texture = ExtResource("2_x0432")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_t708e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,6 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4uhvx"]
 
 [node name="Sensor" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_lubra")
 
 [node name="Range" type="CollisionShape2D" parent="."]

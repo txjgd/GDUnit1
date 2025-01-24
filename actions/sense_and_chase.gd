@@ -8,15 +8,28 @@ extends Area2D
 
 var is_chasing :bool = false
 
+var last_direction :Vector2 = Vector2( 0, 1 )
+var stun_time :float = 0
+var elapsed :float = 0
+
 func _ready():
 	$Range.shape.radius = Radius
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if stun_time:
+		elapsed += delta
+		
+	if elapsed < stun_time:
+		return
+
+	stun_time = 0
+	
 	if is_chasing:
 		var direction = Host.position.direction_to( Target.position ).normalized()
 		Host.velocity = direction * Speed
+		last_direction = direction
 		Host.move_and_slide()
 
 		for i in Host.get_slide_collision_count():
@@ -34,3 +47,11 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body == Target:
 		is_chasing = false
+
+func get_last_direction():
+	return last_direction
+
+func stun( length :float ):
+	stun_time = length
+	elapsed = 0
+	is_chasing = false
