@@ -5,6 +5,7 @@ extends Area2D
 @export var Target :CharacterBody2D
 
 @onready var Host = get_parent()
+@onready var Anim = get_parent().get_node("AnimationPlayer")
 
 var is_chasing :bool = false
 
@@ -42,6 +43,8 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if body == Target:
+		Anim.play( "alert" )
+		await Anim.animation_finished
 		is_chasing = true
 
 func _on_body_exited(body):
@@ -52,6 +55,7 @@ func get_last_direction():
 	return last_direction
 
 func stun( length :float ):
+	Anim.play( "shake" )
 	stun_time = length
 	elapsed = 0
 	is_chasing = false
