@@ -44,7 +44,7 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body == Target:
 		Anim.play( "alert" )
-		await Anim.animation_finished
+		#await Anim.animation_finished
 		is_chasing = true
 
 func _on_body_exited(body):
