@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cher8w5cdowrr"]
+[gd_scene load_steps=9 format=3 uid="uid://cher8w5cdowrr"]
 
 [ext_resource type="Texture2D" uid="uid://d4ffof5g504b7" path="res://assets/characters/CatHead.svg" id="1_ghqvf"]
 [ext_resource type="Texture2D" uid="uid://dx7bwttu36eb4" path="res://assets/other/exclamation-mark.svg" id="1_nefww"]
@@ -43,6 +43,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shape:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_tbvqw"]
 resource_name = "alert"
@@ -81,6 +105,33 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_4gcvp"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 3.14159, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shape:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.233333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_vguxf"]
 resource_name = "shake"
 tracks/0/type = "value"
@@ -100,6 +151,7 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_xit5m"),
 "alert": SubResource("Animation_tbvqw"),
+"new_animation": SubResource("Animation_4gcvp"),
 "shake": SubResource("Animation_vguxf")
 }
 
